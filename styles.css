@@ -1,0 +1,250 @@
+/* Elegant Poetry Website — Blue & Green Theme */
+:root {
+  --blue-deep: #0f2744;
+  --blue-mid: #1a2f4a;
+  --blue-light: #243b55;
+  --sage: #7a9e7e;
+  --mint: #a8d5ba;
+  --emerald: #2d5a3d;
+  --text-on-blue: #e8eef2;
+  --text-on-card: #1a2f4a;
+  --card-bg: #eef4f8;
+  --card-border: rgba(168, 213, 186, 0.4);
+  --shadow: rgba(15, 39, 68, 0.2);
+  --transition: 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: linear-gradient(165deg, var(--blue-deep) 0%, var(--blue-mid) 40%, var(--blue-light) 100%);
+  min-height: 100vh;
+  color: var(--text-on-blue);
+  line-height: 1.7;
+}
+
+/* ========== Homepage ========== */
+.home .container {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.home header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.home h1 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--text-on-blue);
+  margin-bottom: 0.25rem;
+}
+
+.home .tagline {
+  font-size: 1.1rem;
+  color: var(--mint);
+  opacity: 0.95;
+}
+
+.home .random-wrap {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.home .btn-random {
+  display: inline-block;
+  padding: 0.75rem 1.75rem;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--blue-deep);
+  background: var(--mint);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition), background var(--transition);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.home .btn-random:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(42, 90, 61, 0.35);
+  background: #b8e0c8;
+}
+
+.home .btn-random:focus {
+  outline: 2px solid var(--sage);
+  outline-offset: 3px;
+}
+
+.home .card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .home .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .home .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.home .card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.home .card {
+  height: 100%;
+  padding: 1.5rem 1.25rem;
+  background: var(--card-bg);
+  color: var(--text-on-card);
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 16px var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  opacity: 0;
+  animation: cardFadeIn 0.6s ease-out forwards;
+}
+
+.home .card-link:nth-child(1) .card { animation-delay: 0.1s; }
+.home .card-link:nth-child(2) .card { animation-delay: 0.18s; }
+.home .card-link:nth-child(3) .card { animation-delay: 0.26s; }
+.home .card-link:nth-child(4) .card { animation-delay: 0.34s; }
+.home .card-link:nth-child(5) .card { animation-delay: 0.42s; }
+.home .card-link:nth-child(6) .card { animation-delay: 0.5s; }
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home .card-link:hover .card,
+.home .card-link:focus .card,
+.home .card-link:focus-visible .card {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px var(--shadow), 0 0 0 2px var(--sage);
+  border-color: var(--sage);
+}
+
+.home .card-link:focus {
+  outline: none;
+}
+
+.home .card h2 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--emerald);
+  margin-bottom: 0.5rem;
+}
+
+.home .card .preview {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--blue-mid);
+  opacity: 0.9;
+}
+
+/* ========== Poem pages ========== */
+.poem-page .container {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+@media (min-width: 560px) {
+  .poem-page .container {
+    padding: 2rem 1.5rem 4rem;
+  }
+}
+
+.poem-page .back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  padding: 0.35em 0.1em;
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: 0.95rem;
+  color: var(--mint);
+  text-decoration: none;
+  transition: color var(--transition), opacity var(--transition);
+}
+
+.poem-page .back-link:hover,
+.poem-page .back-link:focus {
+  color: #b8e0c8;
+  opacity: 1;
+}
+
+.poem-page .back-link:focus {
+  outline: 2px solid var(--mint);
+  outline-offset: 2px;
+}
+
+.poem-page .poem-title {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: var(--text-on-blue);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.poem-page .poem-body {
+  margin-bottom: 2.5rem;
+}
+
+.poem-page .stanza {
+  margin-bottom: 1.5rem;
+}
+
+.poem-page .stanza p {
+  font-size: clamp(1.1rem, 2.2vw, 1.3rem);
+  margin-bottom: 0.5rem;
+}
+
+.poem-page .stanza p:last-child {
+  margin-bottom: 0;
+}
+
+.poem-page .stanza em {
+  font-style: italic;
+  color: var(--mint);
+}
+
+.poem-page .back-footer {
+  text-align: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(168, 213, 186, 0.3);
+}
+
+.poem-page .back-footer .back-link {
+  margin-bottom: 0;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" class="home">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poetry Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Poetry Collection</h1>
+      <p class="tagline">Words that linger</p>
+    </header>
+
+    <div class="random-wrap">
+      <button type="button" class="btn-random" id="random-poem" aria-label="Open a random poem">Random Poem</button>
+    </div>
+
+    <div class="card-grid">
+      <a href="poem-1.html" class="card-link" aria-label="Read poem: Agentic AI">
+        <article class="card">
+          <h2>Agentic AI</h2>
+          <p class="preview">The cursor blinks. You type a wish. The agent reads, then starts to build—</p>
+        </article>
+      </a>
+      <a href="poem-2.html" class="card-link" aria-label="Read poem: Morning Light">
+        <article class="card">
+          <h2>Morning Light</h2>
+          <p class="preview">First gold across the sill, the room still cool and half asleep.</p>
+        </article>
+      </a>
+      <a href="poem-3.html" class="card-link" aria-label="Read poem: The Sea at Dusk">
+        <article class="card">
+          <h2>The Sea at Dusk</h2>
+          <p class="preview">The waves fold in with long blue sighs, the gulls go home, the pier lights rise.</p>
+        </article>
+      </a>
+      <a href="poem-4.html" class="card-link" aria-label="Read poem: In the Garden">
+        <article class="card">
+          <h2>In the Garden</h2>
+          <p class="preview">Between the rows of green and stone, the bees know more than we have shown.</p>
+        </article>
+      </a>
+      <a href="poem-5.html" class="card-link" aria-label="Read poem: Memory">
+        <article class="card">
+          <h2>Memory</h2>
+          <p class="preview">Not the whole day—a slant of sun, a phrase you said, and then it’s gone.</p>
+        </article>
+      </a>
+      <a href="poem-6.html" class="card-link" aria-label="Read poem: Debugging">
+        <article class="card">
+          <h2>Debugging</h2>
+          <p class="preview">One line was wrong. The screen went red. You fixed the bug and went to bed.</p>
+        </article>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('random-poem');
+      if (btn) {
+        btn.addEventListener('click', function () {
+          var n = Math.floor(Math.random() * 6) + 1;
+          window.location.href = 'poem-' + n + '.html';
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

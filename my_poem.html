@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agentic AI — A Poem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --sunset-orange: #e07c4c;
+      --warm-coral: #d96a6a;
+      --blush-pink: #c97b9a;
+      --deep-purple: #5c3d6b;
+      --dusk-purple: #3d2a4a;
+      --cream: #fdf6f0;
+      --ink: #2d1f36;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Cormorant Garamond', 'Georgia', serif;
+      background: linear-gradient(165deg, var(--cream) 0%, #f5e6dc 25%, #ecd9d0 50%, #e8c9c4 75%, var(--dusk-purple) 100%);
+      min-height: 100vh;
+      color: var(--ink);
+      line-height: 1.7;
+      padding: 4rem 1.5rem 6rem;
+    }
+
+    .container {
+      max-width: 42rem;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 4rem;
+      opacity: 0;
+      animation: fadeIn 1.2s ease-out 0.2s forwards;
+    }
+
+    h1 {
+      font-family: 'Libre Baskerville', 'Georgia', serif;
+      font-size: clamp(2rem, 5vw, 3rem);
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      color: var(--deep-purple);
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+    }
+
+    .poem {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .stanza {
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+      padding: 1.5rem 1.25rem;
+      background: rgba(253, 246, 240, 0.6);
+      border-radius: 12px;
+      border-left: 4px solid var(--sunset-orange);
+      box-shadow: 0 4px 20px rgba(92, 61, 107, 0.08);
+    }
+
+    .stanza:nth-child(1) { animation-delay: 0.5s; }
+    .stanza:nth-child(2) { animation-delay: 1s; }
+    .stanza:nth-child(3) { animation-delay: 1.5s; }
+    .stanza:nth-child(4) { animation-delay: 2s; }
+
+    .stanza p {
+      font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+      font-weight: 400;
+    }
+
+    .stanza p + p {
+      margin-top: 0.75rem;
+    }
+
+    .stanza em {
+      font-style: italic;
+      color: var(--blush-pink);
+    }
+
+    footer {
+      margin-top: 5rem;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 2.5s forwards;
+    }
+
+    footer p {
+      font-family: 'Libre Baskerville', 'Georgia', serif;
+      font-size: 0.85rem;
+      color: var(--deep-purple);
+      opacity: 0.75;
+      letter-spacing: 0.05em;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Agentic AI</h1>
+    </header>
+
+    <article class="poem">
+      <section class="stanza">
+        <p>The cursor blinks. You type a wish.</p>
+        <p>The agent reads, then starts to build—</p>
+        <p>a function here, a test to fill,</p>
+        <p>the tedious parts all done at will.</p>
+      </section>
+      <section class="stanza">
+        <p>No more the grind of boilerplate,</p>
+        <p>no hunting docs till way too late.</p>
+        <p>You pair with code that thinks and tries,</p>
+        <p>that debugs, refactors, improvises.</p>
+      </section>
+      <section class="stanza">
+        <p>Ship faster. Think deeper. Build more.</p>
+        <p><em>That's the joy when AI's your pair.</em></p>
+      </section>
+    </article>
+
+    <footer>
+      <p>March 3, 2025</p>
+    </footer>
+  </div>
+</body>
+</html>
