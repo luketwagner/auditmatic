@@ -7,7 +7,7 @@ function isConfiguredAppId(value) {
   return value && value !== 'REPLACE_WITH_INSTANTDB_APP_ID'
 }
 
-export default function CSVUploader({ existingEntries = [], onUploadComplete }) {
+export default function CSVUploader({ onUploadComplete, userEmail }) {
   const [isDragging, setIsDragging] = useState(false)
   const [isUploading, setIsUploading] = useState(false)
   const [statusMessage, setStatusMessage] = useState('')
@@ -40,21 +40,33 @@ export default function CSVUploader({ existingEntries = [], onUploadComplete }) 
       setWarnings(parsed.warnings)
       setStatusMessage('Saving entries to InstantDB...')
 
-      const deleteOps = existingEntries.map((entry) => db.tx.entries[entry.id].delete())
+      const uploadId = id()
+      const uploadedAt = new Date().toISOString()
 
-      const insertOps = parsed.entries.map((entry) =>
+      const uploadOp = db.tx.uploads[uploadId].update({
+        fileName: file.name,
+        uploadedAt,
+        entryCount: parsed.entries.length,
+        uploaderEmail: userEmail || '',
+      })
+
+      const insertOps = parsed.entries.map((entry, index) =>
         db.tx.entries[id()].update({
           ...entry,
-          uploadedAt: new Date().toISOString(),
+          uploadId,
+          uploadIndex: index + 1,
+          uploadedAt,
+          sourceFileName: file.name,
         }),
       )
 
-      await db.transact([...deleteOps, ...insertOps])
+      await db.transact([uploadOp, ...insertOps])
 
       setStatusMessage(`Uploaded ${parsed.entries.length} entries successfully.`)
       onUploadComplete?.({
         count: parsed.entries.length,
         warnings: parsed.warnings,
+        uploadId,
       })
     } catch (error) {
       setErrors([error?.message || 'Unable to upload CSV.'])
