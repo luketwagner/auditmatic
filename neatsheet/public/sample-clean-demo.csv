@@ -1,0 +1,31 @@
+date,account,debit,credit,description
+2026-02-02,Cash,8427,0,Owner seed capital debit leg
+2026-02-02,Owner Equity,0,8427,Owner seed capital credit leg
+2026-02-03,Accounts Receivable,2319,0,Client invoice C100 debit leg
+2026-02-03,Service Revenue,0,2319,Client invoice C100 credit leg
+2026-02-04,Accounts Receivable,3476,0,Client invoice C101 debit leg
+2026-02-04,Sales Revenue,0,3476,Client invoice C101 credit leg
+2026-02-05,Cash,2319,0,Client C100 payment debit leg
+2026-02-05,Accounts Receivable,0,2319,Client C100 payment credit leg
+2026-02-06,Cash,1742,0,Client C101 partial payment debit leg
+2026-02-06,Accounts Receivable,0,1742,Client C101 partial payment credit leg
+2026-02-09,Rent Expense,1864,0,Corporate office rent debit leg
+2026-02-09,Cash,0,1864,Corporate office rent credit leg
+2026-02-10,Salary Expense,3179,0,Payroll period one debit leg
+2026-02-10,Cash,0,3179,Payroll period one credit leg
+2026-02-11,Utilities Expense,684,0,Electric service bill debit leg
+2026-02-11,Accounts Payable,0,684,Electric service bill credit leg
+2026-02-12,Inventory,2483,0,Warehouse supplies debit leg
+2026-02-12,Accounts Payable,0,2483,Warehouse supplies credit leg
+2026-02-13,Accounts Payable,684,0,Electric bill payment debit leg
+2026-02-13,Cash,0,684,Electric bill payment credit leg
+2026-02-16,Accounts Payable,1127,0,Supplies partial payment debit leg
+2026-02-16,Cash,0,1127,Supplies partial payment credit leg
+2026-02-17,Equipment,2926,0,Router and laptops debit leg
+2026-02-17,Cash,0,2926,Router and laptops credit leg
+2026-02-18,Cash,4581,0,Service contract receipt debit leg
+2026-02-18,Service Revenue,0,4581,Service contract receipt credit leg
+2026-02-19,Cash,2713,0,Bridge financing proceeds debit leg
+2026-02-19,Notes Payable,0,2713,Bridge financing proceeds credit leg
+2026-02-20,Owner Equity Draw,536,0,Member draw debit leg
+2026-02-20,Cash,0,536,Member draw credit leg
